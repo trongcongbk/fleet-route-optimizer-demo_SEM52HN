@@ -5,3 +5,16 @@ gurobipy>=11.0.0
 pydantic>=2.0.0
 pydantic-settings>=2.0.0
 python-dotenv>=1.0.0
+
+
+# --- BẮT BUỘC BỔ SUNG ĐỂ CHẠY TRÊN RENDER ---
+python-multipart  # Để FastAPI nhận file Excel/Upload từ WebUI
+pandas           # Để xử lý dữ liệu bảng biểu
+openpyxl         # Để đọc định dạng file .xlsx từ Excel
+requests         # Để Backend gọi API OSRM lấy dữ liệu bản đồ
+jinja2           # Hỗ trợ render template nếu cần
+
+# --- LƯU Ý VỀ GUROBI ---
+# gurobipy>=11.0.0
+# (Khuyên dùng: Nên bỏ gurobipy nếu bạn chỉ dùng OR-Tools cho bản demo.
+# Gurobi yêu cầu License bản quyền, Render sẽ báo lỗi nếu không có cấu hình License phức tạp)
