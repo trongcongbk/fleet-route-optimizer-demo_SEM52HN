@@ -78,7 +78,10 @@ async def serve_react(full_path: str):
 
     return {"error": "WebUI build folder not found inside src/"}
 
-
+@app.get("/ping")
+async def ping():
+    """Endpoint siêu nhẹ để giữ server thức"""
+    return {"status": "alive"}
 # --- KẾT THÚC PHẦN THÊM MỚI ---
 
 if __name__ == "__main__":

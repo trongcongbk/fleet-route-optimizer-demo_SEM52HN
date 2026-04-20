@@ -20,7 +20,13 @@ function App() {
   const [error, setError] = useState(null);
   const [selectedRoute, setSelectedRoute] = useState(null);
   const [logs, setLogs] = useState([]);
-  const [apiUrl] = useState('http://localhost:8000');
+  //const [apiUrl] = useState('http://localhost:8000');
+  // SỬA THÀNH:
+  const [apiUrl] = useState(
+  process.env.NODE_ENV === 'production'
+    ? '' // Ở môi trường production (Render), để trống để dùng đường dẫn tương đối
+    : 'http://localhost:8000' // Ở máy cá nhân vẫn dùng localhost để phát triển
+  );
   const [timeLimit, setTimeLimit] = useState(60);
   const [solver, setSolver] = useState('ortools');
   const [vehiclePenaltyWeight, setVehiclePenaltyWeight] = useState(null); // null = use default
